@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qaoa-dtn-study"
+version = "0.1.0"
+description = "Hardware-aware QAOA depth-topology-noise trade-off study for Max-Cut."
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["src"]

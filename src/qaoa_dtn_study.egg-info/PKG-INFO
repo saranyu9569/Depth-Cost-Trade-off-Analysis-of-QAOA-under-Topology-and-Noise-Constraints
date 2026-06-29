@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: qaoa-dtn-study
+Version: 0.1.0
+Summary: Hardware-aware QAOA depth-topology-noise trade-off study for Max-Cut.
+Requires-Python: >=3.10

@@ -1,0 +1,47 @@
+experiment:
+  name: cv
+  random_seed: 42
+  output_dir: results/cv
+  figure_dir: figures/cv
+  primary_topology: linear
+
+graphs:
+  graph_types: [erdos_renyi, random_regular, watts_strogatz]
+  num_nodes: [6, 8, 10, 12]
+  graph_seeds: [7, 21, 42, 84, 168]
+
+qaoa:
+  depths: [1, 2, 3]
+  optimizers: [COBYLA, SPSA]
+  cobyla_maxiter: 70
+  spsa_iterations: 60
+  shots: 2048
+  parameter_bounds:
+    gamma: [0.0, 3.141592653589793]
+    beta: [0.0, 1.5707963267948966]
+
+topologies:
+  names: [all_to_all, linear, ring, grid, heavy_hex_like]
+  optimization_level: 3
+
+noise:
+  enabled: true
+  topologies: [linear]
+  shots: 2048
+  settings:
+    - name: noiseless
+      depol_1q: 0.0
+      depol_2q: 0.0
+      readout: 0.0
+    - name: depolarizing
+      depol_1q: 0.001
+      depol_2q: 0.01
+      readout: 0.0
+    - name: readout
+      depol_1q: 0.0
+      depol_2q: 0.0
+      readout: 0.02
+    - name: combined
+      depol_1q: 0.001
+      depol_2q: 0.01
+      readout: 0.02

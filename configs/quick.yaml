@@ -1,0 +1,47 @@
+experiment:
+  name: quick
+  random_seed: 42
+  output_dir: results/quick
+  figure_dir: figures/quick
+  primary_topology: linear
+
+graphs:
+  graph_types: [erdos_renyi, random_regular]
+  num_nodes: [6, 8]
+  graph_seeds: [7, 21]
+
+qaoa:
+  depths: [1, 2]
+  optimizers: [COBYLA, SPSA]
+  cobyla_maxiter: 35
+  spsa_iterations: 25
+  shots: 1024
+  parameter_bounds:
+    gamma: [0.0, 3.141592653589793]
+    beta: [0.0, 1.5707963267948966]
+
+topologies:
+  names: [all_to_all, linear, ring]
+  optimization_level: 3
+
+noise:
+  enabled: true
+  topologies: [linear]
+  shots: 1024
+  settings:
+    - name: noiseless
+      depol_1q: 0.0
+      depol_2q: 0.0
+      readout: 0.0
+    - name: depolarizing
+      depol_1q: 0.001
+      depol_2q: 0.01
+      readout: 0.0
+    - name: readout
+      depol_1q: 0.0
+      depol_2q: 0.0
+      readout: 0.02
+    - name: combined
+      depol_1q: 0.001
+      depol_2q: 0.01
+      readout: 0.02

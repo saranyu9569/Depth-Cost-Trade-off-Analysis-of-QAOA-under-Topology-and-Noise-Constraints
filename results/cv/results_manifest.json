@@ -1,0 +1,14 @@
+{
+  "experiment_name": "cv",
+  "runtime_seconds": 1315.2753360271454,
+  "python_version": "3.11.15",
+  "num_qaoa_rows": 1800,
+  "num_noise_rows": 1440,
+  "num_graph_instances": 60,
+  "primary_topology": "linear",
+  "research_questions": {
+    "RQ1": "Depth-cost trade-off",
+    "RQ2": "Topology sensitivity",
+    "RQ3": "Noise-aware depth robustness"
+  }
+}
