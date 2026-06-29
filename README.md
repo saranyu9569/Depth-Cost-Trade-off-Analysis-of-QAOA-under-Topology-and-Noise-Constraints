@@ -165,7 +165,7 @@ The exact expected approximation ratio improves from **0.735** at `p=1` to **0.7
 
 This shows a clear quality–cost tension: the `p=2 → p=3` improvement is much smaller than the `p=1 → p=2` improvement, while still adding substantial two-qubit gate cost.
 
-![Noiseless QAOA quality vs depth](figures/cv/noiseless_qaoa_quality_vs_depth.png)
+![Noiseless QAOA quality vs depth](figures/cv/exact_ratio_vs_depth.png)
 
 ---
 
@@ -183,7 +183,7 @@ At `p=3`, the linear topology requires about **261.8 CX gates** on average, whil
 
 This result demonstrates that QAOA depth cannot be evaluated independently of hardware connectivity. A circuit that appears reasonable under ideal connectivity can become substantially more expensive after mapping to constrained topology.
 
-![Topology-induced CX cost vs QAOA depth](figures/cv/topology_induced_cx_cost_vs_depth.png)
+![Topology-induced CX cost vs QAOA depth](figures/cv/cx_count_vs_depth_by_topology.png)
 
 ---
 
@@ -193,7 +193,7 @@ The noiseless result suggests that `p=3` has the highest ideal expected approxim
 
 Under depolarizing and combined noise, quality improves slightly from `p=1` to `p=2`, but then drops at `p=3`. This indicates that the additional depth and two-qubit gate exposure can offset the benefit of the more expressive ansatz.
 
-![Noisy QAOA quality vs depth](figures/cv/noisy_qaoa_quality_vs_depth.png)
+![Noisy QAOA quality vs depth](figures/cv/noisy_ratio_vs_depth.png)
 
 The quality drop grows with depth under depolarizing and combined noise:
 
@@ -370,9 +370,9 @@ The main figures are saved under:
 
 ```text
 figures/cv/
-├── noiseless_qaoa_quality_vs_depth.png
-├── topology_induced_cx_cost_vs_depth.png
-├── noisy_qaoa_quality_vs_depth.png
+├── exact_ratio_vs_depth.png
+├── cx_count_vs_depth_by_topology.png
+├── noisy_ratio_vs_depth.png
 └── quality_drop_under_noise.png
 ```
 
